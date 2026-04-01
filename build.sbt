@@ -18,16 +18,17 @@ libraryDependencies += "com.lihaoyi" %% "upickle" % "3.1.0"
 
 libraryDependencies += "com.sun.xml.bind" % "jaxb-impl" % "2.3.3"
 
-/* libraryDependencies ++= Seq(
+/*libraryDependencies ++= Seq(
   "javax.xml.bind" % "jaxb-api" % "2.3.1",
   "com.sun.xml.bind" % "jaxb-impl" % "2.3.4", // JAXB implementation
   "com.sun.xml.bind" % "jaxb-core" % "2.3.0.1",
   "javax.activation" % "activation" % "1.1.1" // Required for JAXB on newer JDKs
-) */
+)*/
 
-mergeStrategy in assembly ~= ( (old) => {
+ThisBuild / assemblyMergeStrategy := {
     case PathList("module-info.class" ) => MergeStrategy.discard
     case PathList("javax", "xml", "bind", ps @ _*) => MergeStrategy.first
-    case x => old(x)
-  }
-)
+    case x => 
+	val old = (ThisBuild / assemblyMergeStrategy).value
+	old(x)
+}
