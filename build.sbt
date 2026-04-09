@@ -18,6 +18,11 @@ libraryDependencies += "com.lihaoyi" %% "upickle" % "3.1.0"
 
 libraryDependencies += "com.sun.xml.bind" % "jaxb-impl" % "2.3.3"
 
+/* libraryDependencies ++= Seq(
+  "de.focus-shift" % "jollyday-jaxb" % "0.33.0", // Check Maven for the latest version
+  "de.focus-shift" % "jollyday-core" % "0.32.0"  // Core dependency
+) */ 
+
 /*libraryDependencies ++= Seq(
   "javax.xml.bind" % "jaxb-api" % "2.3.1",
   "com.sun.xml.bind" % "jaxb-impl" % "2.3.4", // JAXB implementation
