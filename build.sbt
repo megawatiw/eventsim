@@ -4,7 +4,9 @@ version := "1.0"
 
 libraryDependencies += "org.apache.commons" % "commons-math3" % "3.5"
 
-libraryDependencies += "de.jollyday" % "jollyday" % "0.5.1"
+// libraryDependencies += "de.jollyday" % "jollyday" % "0.5.1"
+
+libraryDependencies += "de.focus-shift" % "jollyday-core" % "2.0.0"
 
 libraryDependencies += "org.rogach" %% "scallop" % "6.0.0"
 

@@ -5,7 +5,7 @@ import java.time.{DayOfWeek, Duration, LocalDateTime, LocalDate}
 
 import com.interana.eventsim.Constants._
 import com.interana.eventsim.config.ConfigFromFile
-import de.jollyday.HolidayManager
+import de.focus_shift.jollyday.core.HolidayManager
 import org.apache.commons.math3.random.MersenneTwister
 
 object TimeUtilities {
