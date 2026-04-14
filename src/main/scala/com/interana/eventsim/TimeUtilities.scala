@@ -6,9 +6,9 @@ import java.time.{DayOfWeek, Duration, LocalDateTime, LocalDate}
 import com.interana.eventsim.Constants._
 import com.interana.eventsim.config.ConfigFromFile
 import de.focus_shift.jollyday.core.HolidayManager
+import de.focus_shift.jollyday.core.HolidayCalendar.JAPAN
 import org.apache.commons.math3.random.MersenneTwister
 
-import static de.focus_shift.jollyday.core.HolidayCalendar.JAPAN
 
 object TimeUtilities {
 
