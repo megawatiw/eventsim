@@ -8,12 +8,14 @@ import com.interana.eventsim.config.ConfigFromFile
 import de.focus_shift.jollyday.core.HolidayManager
 import org.apache.commons.math3.random.MersenneTwister
 
+import static de.focus_shift.jollyday.core.HolidayCalendar.JAPAN;
+
 object TimeUtilities {
 
   // def dateTimeToLocalDate(dt: Instant): LocalDate = LocalDate.from(Instant.ofEpochMilli(dt.getMillis()))
 
   // first implementation: US only
-  val holidays = HolidayManager.getInstance()
+  val holidays = HolidayManager.getInstance(ManagerParameters.create(JAPAN))
   def isHoliday(ld: LocalDate): Boolean = holidays.isHoliday(ld)
 
   def isWeekend(ld: LocalDate): Boolean = {
