@@ -2,11 +2,11 @@ package com.interana.eventsim
 
 import java.io.OutputStream
 
-import org.apache.kafka.clients.producer.{ProducerRecord, Producer}
+import org.apache.kafka.clients.producer.{ProducerRecord, KafkaProducer}
 
 import scala.collection.mutable.ArrayBuffer
 
-class KafkaOutputStream(val producer: Producer[Array[Byte],Array[Byte]], val topic: String) extends OutputStream {
+class KafkaOutputStream(val producer: KafkaProducer[Array[Byte],Array[Byte]], val topic: String) extends OutputStream {
 
   val buffer = new ArrayBuffer[Byte](4096)
 

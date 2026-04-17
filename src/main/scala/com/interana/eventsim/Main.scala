@@ -8,7 +8,7 @@ import java.util.Properties
 import com.interana.eventsim.Utilities.{SimilarSongParser, TrackListenCount}
 import com.interana.eventsim.buildin.{DeviceProperties, UserProperties}
 import com.interana.eventsim.config.ConfigFromFile
-import org.apache.kafka.clients.producer.{Producer, ProducerConfig}
+import org.apache.kafka.clients.producer.{KafkaProducer, ProducerConfig}
 import org.rogach.scallop.{ScallopOption, ScallopConf}
 
 import scala.collection.mutable
@@ -122,7 +122,7 @@ object Main extends App {
     val kafkaProperties = new Properties()
     kafkaProperties.setProperty("metadata.broker.list", ConfFromOptions.kafkaBrokerList.get.get)
     val producerConfig = new ProducerConfig(kafkaProperties)
-    new Some(new Producer[Array[Byte],Array[Byte]](producerConfig))
+    new Some(new KafkaProducer[Array[Byte],Array[Byte]](producerConfig))
   } else None
 
   val realTime = ConfFromOptions.realTime.get.get
