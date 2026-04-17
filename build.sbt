@@ -18,6 +18,8 @@ libraryDependencies += "com.fasterxml.jackson.core" % "jackson-databind" % "2.6.
 
 libraryDependencies += "org.apache.kafka" % "kafka_2.13" % "4.2.0"
 
+libraryDependencies += "org.apache.kafka" % "kafka-clients" % "4.2.0"
+
 libraryDependencies += "com.lihaoyi" %% "upickle" % "3.1.0"
 
 ThisBuild / assemblyMergeStrategy := {

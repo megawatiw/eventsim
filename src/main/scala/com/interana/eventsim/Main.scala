@@ -8,7 +8,7 @@ import java.util.Properties
 import com.interana.eventsim.Utilities.{SimilarSongParser, TrackListenCount}
 import com.interana.eventsim.buildin.{DeviceProperties, UserProperties}
 import com.interana.eventsim.config.ConfigFromFile
-import kafka.producer.{Producer, ProducerConfig}
+import org.apache.kafka.clients.producer.{Producer, ProducerConfig}
 import org.rogach.scallop.{ScallopOption, ScallopConf}
 
 import scala.collection.mutable

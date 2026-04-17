@@ -2,7 +2,7 @@ package com.interana.eventsim
 
 import java.io.OutputStream
 
-import kafka.producer.{KeyedMessage, Producer}
+import org.apache.kafka.clients.producer.{ProducerRecord, Producer}
 
 import scala.collection.mutable.ArrayBuffer
 
@@ -15,7 +15,7 @@ class KafkaOutputStream(val producer: Producer[Array[Byte],Array[Byte]], val top
   }
 
   override def flush() = {
-    val msg = new KeyedMessage[Array[Byte], Array[Byte]](topic, buffer.toArray[Byte] )
+    val msg = new ProducerRecord[Array[Byte], Array[Byte]](topic, buffer.toArray[Byte] )
     producer.send(msg)
     buffer.clear()
   }
