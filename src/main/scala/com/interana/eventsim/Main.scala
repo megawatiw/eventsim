@@ -122,7 +122,7 @@ object Main extends App {
     val kafkaProperties = new Properties()
     kafkaProperties.setProperty("metadata.broker.list", ConfFromOptions.kafkaBrokerList.get.get)
     val producerConfig = new ProducerConfig(kafkaProperties)
-    new Some(new KafkaProducer[Array[Byte],Array[Byte]](producerConfig))
+    new Some(new KafkaProducer[Array[Byte],Array[Byte]](kafkaProperties))
   } else None
 
   val realTime = ConfFromOptions.realTime.get.get
