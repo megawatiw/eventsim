@@ -16,7 +16,7 @@ libraryDependencies += "com.fasterxml.jackson.core" % "jackson-core" % "2.6.1"
 
 libraryDependencies += "com.fasterxml.jackson.core" % "jackson-databind" % "2.6.1"
 
-libraryDependencies += "org.apache.kafka" % "kafka_2.13" % "4.2.0"
+// libraryDependencies += "org.apache.kafka" % "kafka_2.13" % "4.2.0"
 
 libraryDependencies += "org.apache.kafka" % "kafka-clients" % "4.2.0"
 

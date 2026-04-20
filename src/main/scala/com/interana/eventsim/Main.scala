@@ -9,7 +9,6 @@ import com.interana.eventsim.Utilities.{SimilarSongParser, TrackListenCount}
 import com.interana.eventsim.buildin.{DeviceProperties, UserProperties}
 import com.interana.eventsim.config.ConfigFromFile
 import org.apache.kafka.clients.producer.{KafkaProducer, ProducerConfig}
-import org.apache.kafka.common.serialization.StringSerializer
 import org.rogach.scallop.{ScallopOption, ScallopConf}
 
 import scala.collection.mutable
@@ -122,8 +121,8 @@ object Main extends App {
   val kafkaProducer = if (ConfFromOptions.kafkaBrokerList.isDefined) {
     val kafkaProperties = new Properties()
     kafkaProperties.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, ConfFromOptions.kafkaBrokerList.get.get)
-    kafkaProperties.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class)
-    kafkaProperties.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class)
+    kafkaProperties.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.ByteArraySerializer")
+    kafkaProperties.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.ByteArraySerializer")
     // val producerConfig = new ProducerConfig(kafkaProperties)
     new Some(new KafkaProducer[Array[Byte],Array[Byte]](kafkaProperties))
   } else None
