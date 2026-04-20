@@ -121,7 +121,7 @@ object Main extends App {
   val kafkaProducer = if (ConfFromOptions.kafkaBrokerList.isDefined) {
     val kafkaProperties = new Properties()
     kafkaProperties.setProperty("metadata.broker.list", ConfFromOptions.kafkaBrokerList.get.get)
-    val producerConfig = new ProducerConfig(kafkaProperties)
+    // val producerConfig = new ProducerConfig(kafkaProperties)
     new Some(new KafkaProducer[Array[Byte],Array[Byte]](kafkaProperties))
   } else None
 
